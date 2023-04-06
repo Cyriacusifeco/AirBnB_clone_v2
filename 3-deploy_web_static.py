@@ -10,6 +10,7 @@ env.hosts = ['54.237.124.196', '34.207.83.120']
 env.user = 'ubuntu'
 env.key_filename = '~/.ssh/school'
 
+
 def do_pack():
     """Creates an archive of the web_static folder."""
     now = datetime.now().strftime('%Y%m%d%H%M%S')
@@ -20,6 +21,7 @@ def do_pack():
         return filename
     else:
         return None
+
 
 def do_deploy(archive_path):
     """Distributes an archive to web servers."""
@@ -35,6 +37,7 @@ def do_deploy(archive_path):
     run("sudo rm -rf {}/web_static".format(path_no_ext))
     run("sudo rm -rf /data/web_static/current")
     run("sudo ln -s {} /data/web_static/current".format(path_no_ext))
+
 
 def deploy():
     """Creates and distributes an archive to web servers."""
