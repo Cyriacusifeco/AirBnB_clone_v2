@@ -1,5 +1,4 @@
 #!/bin/env bash
-
 # Install Nginx if not already installed
 if [ ! -x "$(command -v nginx)" ]; then
     sudo apt-get update
